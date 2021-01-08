@@ -1,0 +1,31 @@
+login window code:
+
+
+
+
+
+Private Sub check_Click()
+If username.Value = "Admin" And pass.Value = "Welcome" Then
+MainWin.Show
+End If
+If username.Value <> "Admin" And pass.Value <> "Welcome" Then
+VBA.Interaction.MsgBox "Enter correct username and password to open", vbCritical, "Invalid Login"
+End If
+If username.Value <> "Admin" Or pass.Value <> "Welcome" Then
+VBA.Interaction.MsgBox "One of username or password is wrong", vbCritical, "Invalid Login"
+End If
+Unload Me
+End Sub
+
+Private Sub pass_Change()
+End Sub
+
+Private Sub UserForm_Initialize()
+username.Value = "<Username>"
+pass.Value = "<Pass>"
+
+End Sub
+
+Private Sub UserForm_QueryClose(Cancel As Integer, CloseMode As Integer)
+Application.ThisWorkbook.Close (True)
+End Sub
